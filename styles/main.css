@@ -1,0 +1,181 @@
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-v48-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/roboto-v48-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  color: var(--blue-800);
+}
+
+* {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+:root {
+  --white: hsl(0, 100%, 100%);
+  --grey: hsl(0, 0%, 58%);
+
+  --blue-800: hsl(234, 29%, 20%);
+  --blue-700: hsl(235, 18%, 26%);
+
+  --red: hsl(4, 100%, 67%);
+
+  --gradient-4: linear-gradient(
+    to right,
+    hsl(15, 100%, 61%),
+    hsl(346, 100%, 66%)
+  );
+
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-600: 3rem;
+  --spacing-800: 4rem;
+  --spacing-900: 4.5rem;
+  --spacing-1300: 6.5rem;
+}
+
+.text-preset-1-700,
+.text-preset-1-m-700 {
+  line-height: 100%;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.text-preset-1-700 {
+  font-size: 3.5rem;
+}
+
+.text-preset-1-m-700 {
+  font-size: var(--spacing-500);
+}
+
+.text-preset-2-700 {
+  font-size: var(--spacing-200);
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-weight: 700;
+}
+
+.text-preset-2-400 {
+  font-size: var(--spacing-200);
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.text-preset-3-700 {
+  font-size: 0.75rem;
+  line-height: 150%;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-500);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-500);
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-500);
+  margin: 0 var(--spacing-300) var(--spacing-500) var(--spacing-300);
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+.card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+
+.card__list li {
+  position: relative;
+}
+
+.card__list li::before {
+  content: "";
+  position: absolute;
+  background-image: url("../assets/images/icon-list.svg");
+  left: calc(-23px - 1rem);
+  height: 21px;
+  width: 21px;
+}
+
+.card__form {
+  display: grid;
+  gap: var(--spacing-300);
+}
+
+/* Components */
+.input-email {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+
+.input-email label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-email input {
+  min-block-size: 3.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--grey);
+  padding: var(--spacing-200) var(--spacing-300);
+}
+
+.input-email input::placeholder {
+  color: var(--grey);
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.button {
+  font-family: inherit;
+  min-block-size: 3.5rem;
+  border-radius: 8px;
+  background-color: var(--blue-800);
+  color: var(--white);
+}
