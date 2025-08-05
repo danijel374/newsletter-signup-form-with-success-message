@@ -11,23 +11,32 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles/main.css" />
+    <script src="./js/main.js" defer></script>
 
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
   </head>
   <body>
-    <!-- Sign-up form start -->
-
     <main>
       <div class="card">
-        <img
-          src="./assets/images/illustration-sign-up-mobile.svg"
-          alt="Illustration"
-        />
+        <picture class="card__img">
+          <source
+            media="(min-width:1024px)"
+            srcset="./assets/images/illustration-sign-up-desktop.svg"
+          />
+          <source
+            media="(min-width:768px)"
+            srcset="./assets/images/illustration-sign-up-tablet.svg"
+          />
+          <img
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt="Illustration"
+          />
+        </picture>
         <div class="card__content">
           <div class="card__text">
-            <h1 class="text-preset-1-m-700">Stay updated!</h1>
+            <h1 class="card__title">Stay updated!</h1>
             <p class="text-preset-2-400">
               Join 60,000+ product managers receiving monthly updates on:
             </p>
@@ -39,7 +48,7 @@
           </div>
 
           <form action="" class="card__form">
-            <div class="input-email">
+            <div class="card__email-container">
               <label class="text-preset-3-700" for="email">
                 Email address
               </label>
@@ -52,15 +61,5 @@
         </div>
       </div>
     </main>
-
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
-    <!-- 
-    Thanks for subscribing! A confirmation email has been sent to
-    ash@loremcompany.com. Please open it and click the button inside to confirm
-    your subscription. Dismiss message
- -->
-    <!-- Success message end -->
   </body>
 </html>

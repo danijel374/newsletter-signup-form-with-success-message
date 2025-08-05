@@ -1,19 +1,19 @@
 /* roboto-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/roboto-v48-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/roboto-v48-latin-regular.woff2") format("woff2");
 }
 
 /* roboto-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/roboto-v48-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/roboto-v48-latin-700.woff2") format("woff2");
 }
 
 body {
@@ -62,19 +62,11 @@ img {
   --spacing-1300: 6.5rem;
 }
 
-.text-preset-1-700,
-.text-preset-1-m-700 {
+.text-preset-1-700 {
   line-height: 100%;
   letter-spacing: 0;
   font-weight: 700;
-}
-
-.text-preset-1-700 {
-  font-size: 3.5rem;
-}
-
-.text-preset-1-m-700 {
-  font-size: var(--spacing-500);
+  font-size: clamp(2.5rem, calc(1.904rem + 2.545vw), 3.125rem);
 }
 
 .text-preset-2-700 {
@@ -98,15 +90,37 @@ img {
 }
 
 main {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   gap: var(--spacing-500);
+    main { */
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  /* main { */
+  /* } */
+  /* } */
 }
 
 .card {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-500);
+  background-color: var(--white);
+}
+
+.card__img {
+  display: grid;
+  place-items: center;
+}
+
+.card__title {
+  line-height: 100%;
+  letter-spacing: 0;
+  font-weight: 700;
+  font-size: var(--spacing-500);
 }
 
 .card__content {
@@ -147,35 +161,140 @@ main {
   gap: var(--spacing-300);
 }
 
-/* Components */
-.input-email {
+.card__email-container {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-100);
+  position: relative;
 }
 
-.input-email label {
+.card__email-container label {
   display: flex;
   justify-content: space-between;
 }
 
-.input-email input {
+.card__email-container input {
   min-block-size: 3.5rem;
   border-radius: 8px;
   border: 1px solid var(--grey);
   padding: var(--spacing-200) var(--spacing-300);
 }
 
-.input-email input::placeholder {
+.card__email-container input::placeholder {
   color: var(--grey);
   font-size: 1rem;
   line-height: 150%;
 }
 
+.card__email-container--invalid input {
+  background-color: hsl(2, 100%, 95%);
+  border: 1px solid var(--red);
+  color: var(--red);
+}
+
+.card__email-container--invalid::before {
+  content: "Valid email required";
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: var(--red);
+  position: absolute;
+  right: 0;
+}
+
 .button {
   font-family: inherit;
-  min-block-size: 3.5rem;
   border-radius: 8px;
   background-color: var(--blue-800);
   color: var(--white);
+  border: unset;
+  cursor: pointer;
+  min-block-size: 3.5rem;
+}
+
+.card__button--active {
+  background: var(--gradient-4);
+}
+
+.card__button--disabled {
+  cursor: not-allowed;
+}
+
+/* successCard */
+
+.success-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: clamp(1.5rem, calc(-1.217rem + 11.594vw), 4rem);
+  background-color: var(--white);
+  max-inline-size: 31.5rem;
+  border-radius: 36px;
+}
+
+.success-card__text {
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.success-card button {
+  margin-top: auto;
+}
+
+/* 768px */
+
+@media (width >= 48rem) {
+  main {
+    background-color: var(--blue-700);
+  }
+
+  .card {
+    margin: 4.5625rem 5rem;
+    padding: var(--spacing-500);
+    border-radius: 2.25rem;
+  }
+
+  .card__title {
+    font-size: 3.5rem;
+  }
+
+  .card__content {
+    margin: unset;
+    gap: var(--spacing-300);
+  }
+
+  .card__form {
+    gap: var(--spacing-200);
+  }
+}
+
+/* 1024px */
+
+@media (width >= 64rem) {
+  .card {
+    flex-direction: unset;
+    max-inline-size: 56.5rem;
+    gap: 64px;
+    align-items: center;
+    padding: 24px 32px;
+  }
+
+  .card__img {
+    order: 1;
+  }
+
+  .card__content {
+    max-width: 376px;
+    min-height: 450px;
+    gap: var(--spacing-400);
+  }
+
+  .card__text {
+    gap: var(--spacing-400);
+  }
+
+  .card__form {
+    gap: var(--spacing-300);
+  }
 }
