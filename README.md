@@ -30,7 +30,7 @@ These challenges help improve your coding skills by building realistic, hands-on
 
 ### 🔗 Links
 
-- 💡 Solution URL: _Coming soon_
+- 💡 Solution URL: [Newsletter sign-up form with success message solution URL](https://www.frontendmentor.io/solutions/newsletter-sign-up-form-with-success-message---pure-jscss-rYucYZ9S8A)
 - 🌐 Live Site URL: [View Live Site](https://danijel374.github.io/newsletter-signup-form-with-success-message/)
 
 ---
